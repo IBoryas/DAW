@@ -134,7 +134,7 @@
   
   .product {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto;
     flex-wrap: wrap;
     align-content: center;
     justify-content:center;

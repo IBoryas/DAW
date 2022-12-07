@@ -9,7 +9,8 @@ getProjects(newProjects);
 
 async function getProjects(elem)
 {
-    let res = await fetch(`https://localhost:7232/api/projects/list`)
+    elem.innerHTML="<option value='null'></option>";
+    let res = await fetch(`https://localhost:7232/api/projects/available`)
     res = await res.json();
     res.forEach(project => {
         const projElem = document.createElement('option');
@@ -35,7 +36,9 @@ async function getPost() {
     
     let res = await fetch(`https://localhost:7232/api/deals`)
     res = await res.json();
-    addDataToDOM(res);
+    await addDataToDOM(res);
+    SetDeals();
+    // SetSaves();
 }
 
 function FormatDate(date)
@@ -48,10 +51,11 @@ function FormatDate(date)
     return formattedDate;
 }
 
-function addDataToDOM(data) {
+async function addDataToDOM(data) {
     container.innerHTML = "";
-    data.forEach(deal => {
-        console.log(deal)
+    for (let x=0; x<data.length; x++){
+        deal = data[x];
+        // console.log(deal)
         const postElement = document.createElement('div');
         postElement.setAttribute('class','blog-post');
         postElement.setAttribute('id',`${deal.id}`);
@@ -61,11 +65,12 @@ function addDataToDOM(data) {
             <div>
                   <div class="form-group">
                     <label>Client</label>
-                    <input type="text" id="Client" className="form-control" value="${deal.client}" />
+                    <select type="text" id="Client" className="form-control">
+                    </select>
                   </div>
                   <div class="form-group">
                       <label>Project</label>
-                      <input type="text" id="Project" className="form-control" value="${deal.project}" />
+                      <input type="text" id="Project" className="form-control" value="${deal.projectName}" disabled/>
                   </div>
             </div>
             <div>
@@ -89,8 +94,83 @@ function addDataToDOM(data) {
                   </div>
             </div>
         `;
+        var client = postElement.querySelector('#Client')
+        await getClients(client);
+        client.value = deal.clientId;
+
         container.appendChild(postElement);
-    });
-    // SetClients();
-    // SetSaves();
+    };
 }
+
+function SetDeals()
+{
+    const deals = document.getElementsByClassName('blog-post');
+    // console.log(deals.length);
+    // console.log(deals);
+    for (let x = 0; x < deals.length; x++) {
+        deals[x].addEventListener("click",() => {
+            var id= deals[x].id;
+            if (currentDealId != id)
+            {
+                currentDealId = id;
+                for (let y = 0; y < deals.length; y++){
+                    deals[y].setAttribute('class','blog-post');
+                }
+                deals[x].className = 'blog-post current-post';
+            }
+        })
+    }
+}
+
+function FormReset()
+{
+    document.getElementById('NewName').value = "";
+    document.getElementById('NewClient').value = "null";
+    document.getElementById('NewProject').value = "";
+    document.getElementById('Price').value = "";
+    document.getElementById('Likelihood').value = "";
+    document.getElementById('StartDate').value = "";
+    document.getElementById('Hours').value = "";
+}
+
+function FormIsValid()
+{
+    var name = document.getElementById('NewName').value;
+    var client = document.getElementById('NewClient').value;
+    var project = document.getElementById('NewProject').value;
+    var price = document.getElementById('Price').value;
+    var likelihood = document.getElementById('Likelihood').value;
+    var startDate = document.getElementById('StartDate').value;
+    var hours = document.getElementById('Hours').value;
+    return (name!="" && client!="null" &&
+        project != "" && price != "" &&
+        likelihood != "" && startDate != "" &&
+        hours != "");
+}
+
+document.getElementById('addDeal').addEventListener('click', async () => {
+    if(FormIsValid())
+    {
+       await fetch (`https://localhost:7232/api/deals`, {
+           method: "POST",
+           headers: {
+               "Content-Type" : "application/json"
+               },
+           body: JSON.stringify(
+               {
+                "name": document.getElementById('NewName').value,
+                "clientId": document.getElementById('NewClient').value,
+                "projectId": document.getElementById('NewProject').value,
+                "pricePerHour": document.getElementById('Price').value,
+                "likelihood": document.getElementById('Likelihood').value,
+                "prospectedStartDate": document.getElementById('StartDate').value,
+                "prospectedHours": document.getElementById('Hours').value
+                }
+            )
+        })
+
+       getPost();
+       FormReset();
+       getProjects(newProjects);
+    }   
+})

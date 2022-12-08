@@ -1,0 +1,43 @@
+.bossContainer{
+    display: grid;
+    grid-template-columns: 70% 30%;
+  }
+  
+  .myContainer {
+    max-width: 114rem;
+    padding-left: 100px;
+    margin-right: 5%;
+    overflow: hidden scroll;
+    height: 550px;
+  }
+  
+  .blog-post {
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 20px;
+    margin: 5px;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+  }
+  
+  .current-post {
+    background-color: #6fa8f35c;
+  }
+  
+  
+  .save-btn{
+    margin: 8% 30%;
+  }
+  
+  .single{
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  
+  label{
+    padding-right: 10%;
+  }
+  
+  .date, select{
+    width: 205px;
+  }

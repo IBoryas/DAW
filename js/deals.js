@@ -38,7 +38,7 @@ async function getPost() {
     res = await res.json();
     await addDataToDOM(res);
     SetDeals();
-    // SetSaves();
+    SetSaves();
 }
 
 function FormatDate(date)
@@ -122,6 +122,45 @@ function SetDeals()
     }
 }
 
+function ChangesAreValid(a,b,c,d)
+{
+    return (a!="" && b!="" && c!="" && d!="");
+}
+
+function SetSaves()
+{
+    const btns = document.getElementsByClassName('save-btn');
+    for (let x= 0; x<btns.length; x++){
+        btns[x].addEventListener('click', async () => {
+            id = btns[x].parentNode.id;
+            deal = document.getElementById(id);
+            price = deal.querySelector('#pricePerHour').value;
+            like = deal.querySelector('#likelihood').value;
+            date = deal.querySelector('#prospectedStartDate').value;
+            hours = deal.querySelector('#prospectedHours').value;
+
+                if (ChangesAreValid(price.like,date,hours))
+                {
+                    await fetch (`https://localhost:7232/api/deals/${id}`, {
+                        method: "PUT",
+                        headers: {
+                            "Content-Type" : "application/json"
+                            },
+                        body: JSON.stringify(
+                            {
+                                "clientId": document.getElementById(id).querySelector('#Client').value,
+                                "pricePerHour": price,
+                                "likelihood": like,
+                                "prospectedStartDate": date,
+                                "prospectedHours": hours
+                            }
+                        )
+                        })
+                }
+        })
+    }
+}
+
 function FormReset()
 {
     document.getElementById('NewName').value = "";
@@ -143,7 +182,7 @@ function FormIsValid()
     var startDate = document.getElementById('StartDate').value;
     var hours = document.getElementById('Hours').value;
     return (name!="" && client!="null" &&
-        project != "" && price != "" &&
+        project != "null" && price != "" &&
         likelihood != "" && startDate != "" &&
         hours != "");
 }
@@ -173,4 +212,14 @@ document.getElementById('addDeal').addEventListener('click', async () => {
        FormReset();
        getProjects(newProjects);
     }   
+})
+
+document.getElementById('delete').addEventListener('click', async () => {
+    if (currentDealId != null)
+    {
+        var deal = document.getElementById(currentDealId);
+        deal.parentNode.removeChild(deal)
+        await fetch(`https://localhost:7232/api/deals/${currentDealId}`, { method: 'DELETE' });
+        getProjects(newProjects);
+    }
 })

@@ -47,15 +47,15 @@ function addDataToDOM(data) {
                 </ul>
             </div>
         `;
-        container.appendChild(postElement);
-
-        const dealsList = document.getElementById('deals');
+        const dealsList = postElement.querySelector('#deals');
         client.deals.forEach(deal => {
             // console.log(deal);
             var li = document.createElement("li");
             li.appendChild(document.createTextNode(deal));
             dealsList.appendChild(li);
         });
+        
+        container.appendChild(postElement);
     });
     SetClients();
     SetSaves();

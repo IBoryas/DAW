@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <!-- StyleSheet -->
   <link rel="stylesheet" href="./styles/main.css" />
-  <link rel="stylesheet" href="./styles/projects.css" />
+  <link rel="stylesheet" href="./styles/employee.css" />
   <title>PROVIDENCE</title>
   
 </head>
@@ -37,11 +37,11 @@
   </div>
 
   <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:3%">
-    <span><a href="index.html" class="w3-bar-item w3-button"><i class="fas fa-home"></i></a></span>
+    <span><a href="products.html" class="w3-bar-item w3-button"><i class="fas fa-home"></i></a></span>
     <span><a href="projects.html" class="w3-bar-item w3-button"><i class="fas fa-briefcase"></i></a></span>
     <span><a href="employees.html" class="w3-bar-item w3-button"><i class="fas fa-users"></i></a></span>
+    <span><a href="calendar.html" class="w3-bar-item w3-button"><i class="fas fa-calendar"></i></a></span>
     <span><a href="deals.html" class="w3-bar-item w3-button"><i class="fas fa-file"></i></a></span>
-    <span><a href="clients.html" class="w3-bar-item w3-button"><i class="fas fa-user-tie"></i></a></span>
 </div>
 
   <!-- Header -->
@@ -80,7 +80,11 @@
             </li>
 
             <li class="nav-item">
-              <a href="clients.html" class="nav-link">Clients</a>
+              <a href="calendar.html" class="nav-link">Calendar</a>
+            </li>
+
+            <li class="nav-item">
+              <a href="customers.html" class="nav-link">Customers</a>
             </li>
 
           </ul>
@@ -88,6 +92,7 @@
 
         <div class="nav-icons">
           <span><a href="login.html"><i class="fas fa-user"></i></a></span>
+          <span><a href="notification.html"></a><i class="fas fa-bell"></i></span>
         </div>
 
         <div class="hamburger">
@@ -96,45 +101,29 @@
       </div>
     </nav>
   </header>
-   <!-- Page Content -->
-  <div class="bossContainer">
-      <div class="myContainer" id="container">
-
-      </div>
-      <form id="Form">
-        <h2>Project details</h2>
-        <div class="form-group">
-          <label>Project name</label>
-          <input type="text" id="name" className="form-control" />
-        </div>
-        <div class="form-group">
-          <label>Signed date</label><br>
-          <input type="date" id="SignedDate" class="date" className="form-control"/>
-        </div>      
-         <div class="form-group">
-          <label>Start date</label><br>
-          <input type="date" id="StartDate" class="date" className="form-control"/>
-        </div>
-        <div class="form-group">
-          <label>End date</label><br>
-          <input type="date" id="EndDate" class="date" className="form-control"/>
-        </div>
-
-          <input type="button" value="Save" id="saveChanges" className="btn btn-primary btn-block"/>
-          <p></p>
-        <div class="form-group"></div>        
-           <p></p>
-           <h3>Danger Zone</h3>
-        <input type="button" value="Delete project" id="deleteProject" className="btn btn-primary btn-block"/>
-      </form>
-     
-  </div>
   
+  <!-- Page Content -->
+    <div class="bossContainer">
+        <div class="Econtainer" id="container">
+            <div class="available" id="available">
 
-<!-- Glidejs Script -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/glide.min.js"></script>
+            </div>
+            <div class="unavailable" id="unavailable">
 
-<!-- Custom Script -->
-<script src="./js/index.js"></script>
-<script src="./js/projects.js"></script>
+            </div>
+        </div>
+        <form>
+
+        </form>
+    </div>
+
+  <!-- Glidejs Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/glide.min.js"></script>
+
+  <!-- Custom Script -->
+  <script src="./js/index.js"></script>
+  <script src="./js/main.js"></script>
 </body>
+
+</html>
+

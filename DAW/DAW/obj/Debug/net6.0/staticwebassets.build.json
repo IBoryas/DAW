@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "dcW86VqIkXZnvNGrbYXoYBx8siBUfpnxtcxDP+wVup8=",
+  "Source": "DAW",
+  "BasePath": "_content/DAW",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "DAW\\wwwroot",
+      "Source": "DAW",
+      "ContentRoot": "C:\\Users\\ilyab\\Desktop\\программы\\DAW\\DAW\\wwwroot\\",
+      "BasePath": "_content/DAW",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\ilyab\\Desktop\\программы\\DAW\\DAW\\wwwroot\\employees.html",
+      "SourceId": "DAW",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ilyab\\Desktop\\программы\\DAW\\DAW\\wwwroot\\",
+      "BasePath": "_content/DAW",
+      "RelativePath": "employees.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\employees.html"
+    }
+  ]
+}

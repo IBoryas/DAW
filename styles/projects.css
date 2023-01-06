@@ -32,6 +32,13 @@
   .single{
     grid-column-start: 1;
     grid-column-end: 3;
+    margin-bottom: unset;
+  }
+
+  .row{
+    grid-column-start: 1;
+    grid-column-end: 4;
+    margin-top: unset;
   }
   
   label{

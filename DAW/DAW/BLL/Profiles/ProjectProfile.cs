@@ -11,7 +11,10 @@ namespace DAW.BLL.Profiles
         {
             CreateMap<Project, ListProjectDto>();
             CreateMap<AddProjectDto, Project>();
-            CreateMap<Project, ProjectDto>();
+            CreateMap<Project, ProjectDto>()
+                .ForMember(
+                    x => x.Employees,
+                    y => y.MapFrom(z => z.Employees.Select(d => $"{d.LastName} {d.FirstName} - {d.JobRole}")));
             CreateMap<UpdateProjectDto, Project>();
         }
     }

@@ -39,12 +39,26 @@
     grid-column-start: 1;
     grid-column-end: 4;
     margin-top: unset;
+    grid-template-columns: 60% 40%;
+    display: grid;
   }
   
   label{
     padding-right: 10%;
   }
   
-  .date, select{
+  .date{
     width: 205px;
+  }
+
+  .form-group{
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+
+  .employees{
+    overflow: hidden scroll;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    padding-left: 8%;
   }

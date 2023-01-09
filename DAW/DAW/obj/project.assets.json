@@ -7563,11 +7563,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ilyab\\Desktop\\программы\\DAW\\DAW\\DAW.csproj",
+      "projectUniqueName": "C:\\Users\\ilyab\\Desktop\\CRM\\DAW\\DAW\\DAW.csproj",
       "projectName": "DAW",
-      "projectPath": "C:\\Users\\ilyab\\Desktop\\программы\\DAW\\DAW\\DAW.csproj",
+      "projectPath": "C:\\Users\\ilyab\\Desktop\\CRM\\DAW\\DAW\\DAW.csproj",
       "packagesPath": "C:\\Users\\ilyab\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ilyab\\Desktop\\программы\\DAW\\DAW\\obj\\",
+      "outputPath": "C:\\Users\\ilyab\\Desktop\\CRM\\DAW\\DAW\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

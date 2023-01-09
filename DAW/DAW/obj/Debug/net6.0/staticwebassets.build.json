@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "dcW86VqIkXZnvNGrbYXoYBx8siBUfpnxtcxDP+wVup8=",
+  "Hash": "Wh6plvOBZ/3lVuzKS4vnQHsYHT7TxMzN4jEGOGsMdTc=",
   "Source": "DAW",
   "BasePath": "_content/DAW",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "DAW\\wwwroot",
       "Source": "DAW",
-      "ContentRoot": "C:\\Users\\ilyab\\Desktop\\программы\\DAW\\DAW\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ilyab\\Desktop\\CRM\\DAW\\DAW\\wwwroot\\",
       "BasePath": "_content/DAW",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\ilyab\\Desktop\\программы\\DAW\\DAW\\wwwroot\\employees.html",
+      "Identity": "C:\\Users\\ilyab\\Desktop\\CRM\\DAW\\DAW\\wwwroot\\employees.html",
       "SourceId": "DAW",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ilyab\\Desktop\\программы\\DAW\\DAW\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ilyab\\Desktop\\CRM\\DAW\\DAW\\wwwroot\\",
       "BasePath": "_content/DAW",
       "RelativePath": "employees.html",
       "AssetKind": "All",

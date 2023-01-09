@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BrbXTWEm2qiqERGdRdFB0v3HrrX+BB6q7O4p9kDvw7RDTj0+lbl6iFRTzpGhspSMz8UQPuve7HmdHvRYAEqoTA==",
+  "dgSpecHash": "PVL9saZVu0ohiW8j4IG5+dWEUVQeAkwzMHlZgGPzw4gMBe0GjnIrJcBdKDFEwMxQdbhshZyoqlswRA4A5FKJYA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ilyab\\Desktop\\программы\\DAW\\DAW\\DAW.csproj",
+  "projectFilePath": "C:\\Users\\ilyab\\Desktop\\CRM\\DAW\\DAW\\DAW.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ilyab\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\ilyab\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",

@@ -139,7 +139,7 @@ function SetSaves()
             date = deal.querySelector('#prospectedStartDate').value;
             hours = deal.querySelector('#prospectedHours').value;
 
-                if (ChangesAreValid(price.like,date,hours))
+                if (ChangesAreValid(price,like,date,hours))
                 {
                     await fetch (`https://localhost:7232/api/deals/${id}`, {
                         method: "PUT",
